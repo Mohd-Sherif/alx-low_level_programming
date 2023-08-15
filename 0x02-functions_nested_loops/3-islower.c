@@ -11,7 +11,7 @@ int _islower(int c)
 	int i;
 
 	for (i = 0; i < 26; i++)
-		if (c == ('A' + i))
+		if (c == ('a' + i))
 			return (1);
 	return (0);
 }
