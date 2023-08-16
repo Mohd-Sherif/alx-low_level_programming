@@ -16,7 +16,7 @@ int main(void)
 	int ctr = 0;
 
 	printf("%li, %li, ", t1, t2);
-	while (ctr < 46)
+	while (ctr < 47)
 	{
 		printf("%li, ", next);
 		t1 = t2;
