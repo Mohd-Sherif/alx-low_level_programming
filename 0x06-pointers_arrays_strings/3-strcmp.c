@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* strcmp - compares two strings.
+* _strcmp - compares two strings.
 * @s1: pointer to the first address of the first string.
 * @s2: pointer to the first address of the second string.
 *
