@@ -22,7 +22,7 @@ char *_strdup(char *str)
 	/* string length calculation */
 	while (str[length] != '\0')
 		length++;
-	copy_str = malloc(sizeof(char) * length);
+	copy_str = malloc(sizeof(char) * length + 1);
 	if (copy_str == NULL)
 		return (NULL);
 	for (i = 0; i < length; i++)
