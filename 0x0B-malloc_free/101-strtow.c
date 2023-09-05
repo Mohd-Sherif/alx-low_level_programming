@@ -1,24 +1,6 @@
 #include <stdlib.h>
 #include "main.h"
-
-/**
-* _strlen - returns the length of a string.
-* @s: pointer to the first address of the string.
-*
-* Return: length of the given string.
-*/
-int _strlen(char *s)
-{
-	int strlen = 0;
-
-	while (*s != '\0')
-	{
-		strlen++;
-		s++;
-	}
-	return (strlen);
-}
-
+/*************************** NOT CORRECT *******************************/
 /**
  * wordCount - count words.
  * @str: pointer to the string
@@ -53,7 +35,7 @@ char **strtow(char *str)
 {
 	int words, i, j, wordChar = 0, k, startOfWord;
 	char **s;
-	
+
 	if (str == NULL)
 		return (NULL);
 	words = wordCount(str);
