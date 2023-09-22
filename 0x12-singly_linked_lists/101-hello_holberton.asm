@@ -10,7 +10,7 @@ main:
 	mov rax, 1              ; File descriptor 1 is stdout
 	mov rdi, 1              ; Buffer address
 	mov rsi, msg            ; Address of the string
-	mov rdx, 18             ; Length of the string
+	mov rdx, 17             ; Length of the string
 	syscall
 
 	; Exit the program
