@@ -22,6 +22,34 @@ listint_t *add_nodeint(listint_t **head, const int n)
 }
 
 /**
+ * add_nodeint_end - adds a new node at the end of a listint_t list.
+ * @head: pointer to the list.
+ * @n: integer to be inserted in the list.
+ *
+ * Return: the address of the new element,
+ *			or NULL if it failed.
+ */
+listint_t *add_nodeint_end(listint_t **head, const int n)
+{
+	listint_t *new, *current = *head;
+
+	new = (listint_t *)malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+	new->next = NULL;
+	if (current == NULL)
+	{
+		*head = new;
+		return (*head);
+	}
+	while (current->next != NULL)
+		current = current->next;
+	current->next = new;
+	return (new);
+}
+
+/**
  * insert_nodeint_at_index - inserts a new node at a given position.
  * @head: pointer to pointer to the list.
  * @idx: order of the node.
@@ -43,6 +71,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		old = old->next;
 		ctr++;
 	}
+	if (old == NULL)
+		return (add_nodeint_end(head, n));
 	new = (listint_t *) malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
