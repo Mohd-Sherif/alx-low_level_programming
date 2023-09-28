@@ -57,7 +57,7 @@ unsigned int binary_to_uint(const char *b)
 		digitValue = b[len - i - 1] - '0';
 		if (digitValue < 0 || digitValue > 1)
 			return (0);
-		dec += _pow_recursion(2, i) * digitValue;
+		dec += digitValue ? _pow_recursion(2, i) : 0;
 	}
 	return (dec);
 }
