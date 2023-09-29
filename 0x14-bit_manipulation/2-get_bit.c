@@ -10,5 +10,7 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
+	if (index > (sizeof(n) * CHAR_BIT))
+		return (-1);
 	return (n & (1UL << index) ? 1 : 0);
 }
