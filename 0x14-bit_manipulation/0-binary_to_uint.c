@@ -48,10 +48,11 @@ int _pow_recursion(int x, int y)
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int dec = 0;
-	int len = _strlen((char *)b), i, digitValue;
+	int len, i, digitValue;
 
 	if (b == NULL)
 		return (0);
+	len = _strlen((char *)b);
 	for (i = 0; i < len; i++)
 	{
 		digitValue = b[len - i - 1] - '0';
