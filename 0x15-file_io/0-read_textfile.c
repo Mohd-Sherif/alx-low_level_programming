@@ -28,7 +28,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	free(buffer);
 	if (close(fileDescriptor) == -1)
 		exit(1);
-	if (fileDescriptor == -1 || readLetters == -1 || writeLetters == -1 || readLetters != writeLetters)
+	if (
+		fileDescriptor == -1 ||
+		readLetters == -1 ||
+		writeLetters == -1 ||
+		readLetters != writeLetters
+	)
 		return (0);
 	return (readLetters);
 }
