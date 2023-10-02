@@ -30,7 +30,7 @@ int _strlen(char *s)
 int create_file(const char *filename, char *text_content)
 {
 	int fileDescriptor;
-	size_t textLength = _strlen(text_content);
+	size_t textLength = _strlen(text_content), writeLetters;
 
 	if (filename == NULL)
 		return (-1);
@@ -39,7 +39,8 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	if (text_content == NULL)
 		text_content = "";
-	if (write(fileDescriptor, text_content, textLength) == -1)
+	writeLetters = write(fileDescriptor, text_content, textLength);
+	if (writeLetters == -1 || writeLetters != textLength)
 	{
 		close(fileDescriptor);
 		return (-1);
