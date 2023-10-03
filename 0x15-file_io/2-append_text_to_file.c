@@ -30,7 +30,7 @@ int _strlen(char *s)
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fileDescriptor, writeLetters;
-	int textLength = _strlen(text_content);
+	int textLength;
 
 	if (filename == NULL)
 		return (-1);
@@ -39,6 +39,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	if (text_content != NULL)
 	{
+		textLength = _strlen(text_content);
 		writeLetters = write(fileDescriptor, text_content, textLength);
 		if (writeLetters == -1 || writeLetters != textLength)
 			return (-1);
