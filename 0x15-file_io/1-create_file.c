@@ -30,18 +30,20 @@ int _strlen(char *s)
 int create_file(const char *filename, char *text_content)
 {
 	int fileDescriptor, writeLetters;
-	int textLength = _strlen(text_content);
+	int textLength;
 
 	if (filename == NULL)
 		return (-1);
 	fileDescriptor = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 	if (fileDescriptor == -1)
 		return (-1);
-	if (text_content == NULL)
-		text_content = "";
-	writeLetters = write(fileDescriptor, text_content, textLength);
+	if (text_content != NULL)
+	{
+		textLength = _strlen(text_content);
+		writeLetters = write(fileDescriptor, text_content, textLength);
+		if (writeLetters == -1 || writeLetters != textLength)
+			return (-1);
+	}
 	close(fileDescriptor);
-	if (writeLetters == -1 || writeLetters != textLength)
-		return (-1);
 	return (1);
 }
