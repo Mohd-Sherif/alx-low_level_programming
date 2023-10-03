@@ -101,7 +101,7 @@ void cp(
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			exit(99);
 		}
-	} while (readLetters != EOF);
+	} while (readLetters > 0);
 }
 
 /**
