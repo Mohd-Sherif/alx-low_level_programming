@@ -34,14 +34,15 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (filename == NULL)
 		return (-1);
-	if (!text_content)
-		return (1);
 	fileDescriptor = open(filename, O_WRONLY | O_APPEND);
 	if (fileDescriptor == -1)
 		return (-1);
-	writeLetters = write(fileDescriptor, text_content, textLength);
+	if (text_content != NULL)
+	{
+		writeLetters = write(fileDescriptor, text_content, textLength);
+		if (writeLetters == -1 || writeLetters != textLength)
+			return (-1);
+	}
 	close(fileDescriptor);
-	if (writeLetters == -1 || writeLetters != textLength)
-		return (-1);
 	return (1);
 }
