@@ -101,7 +101,7 @@ void cp(
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			exit(99);
 		}
-	} while (file_from_descriptor != EOF);
+	} while (readLetters != EOF);
 }
 
 /**
@@ -129,7 +129,10 @@ int main(int ac, char **av)
 	file_to_descriptor = check_write(file_to);
 	buffer = malloc(1024);
 	if (buffer == NULL)
-		exit(1);
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+		exit(99);
+	}
 	cp(
 		file_from, file_from_descriptor,
 		file_to, file_to_descriptor,
