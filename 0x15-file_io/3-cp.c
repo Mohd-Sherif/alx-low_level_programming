@@ -34,6 +34,11 @@ int check_write(char *file)
 {
 	int file_descriptor;
 
+	if (file == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+		exit(99);
+	}
 	file_descriptor = open(file, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file_descriptor == -1)
 	{
