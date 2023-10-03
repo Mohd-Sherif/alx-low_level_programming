@@ -12,7 +12,7 @@ int check_read(char *file)
 
 	if (file == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't read\n");
 		exit(98);
 	}
 	file_descriptor = open(file, O_RDONLY);
@@ -36,7 +36,7 @@ int check_write(char *file)
 
 	if (file == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't write\n");
 		exit(99);
 	}
 	file_descriptor = open(file, O_CREAT | O_WRONLY | O_TRUNC, 0664);
