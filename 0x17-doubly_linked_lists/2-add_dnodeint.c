@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * dlistint_len - returns the number of elements in a linked dlistint_t list.
+ * add_dnodeint - adds a new node at the beginning of a dlistint_t list.
  * @head: pointer to the head of the list.
  * @n: integer
  *
