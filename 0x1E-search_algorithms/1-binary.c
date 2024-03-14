@@ -15,7 +15,7 @@ void print_search_range(int *array, int low, int high)
 	{
 		if (i == high)
 			printf("%d", array[i]);
-                else
+		else
 			printf("%d, ", array[i]);
 	}
 	printf("\n");
